@@ -224,3 +224,6 @@ a.card:hover { border-top-color: var(--prometheus); }
 .form-row input:focus,.form-row textarea:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}
 .form-check label{display:flex;align-items:flex-start;gap:.6rem;font-family:var(--font-sans);font-size:.85rem;line-height:1.45;color:var(--text-body);cursor:pointer}
 .form-check input[type="checkbox"]{margin-top:.2rem;accent-color:var(--discord)}
+
+/* Program pathways and email template */
+.gateway-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin:2rem 0}.gateway-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:.8rem}.gateway-card h2{font-size:1.5rem}.gateway-card .btn{margin-top:auto;white-space:normal}.prescreening-box{background:var(--bg-surface-sunken);padding:1.5rem;border-radius:var(--radius-sm);margin-top:1rem}.template-preview{padding:1rem;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin:1rem 0}.action-row{display:flex;gap:.75rem;flex-wrap:wrap}.action-row .btn{white-space:normal}#template-text{width:100%;font:inherit;padding:.75rem}#sanctuary,#curriculum,#join{scroll-margin-top:10rem}@media(max-width:640px){.gateway-grid{grid-template-columns:minmax(0,1fr)}}

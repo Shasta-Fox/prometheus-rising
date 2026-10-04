@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>The Prometheus Rising Protocol</title>
   <meta name="description" content="A restorative harm reduction and counselor education program connecting pharmacology to the lived realities of recovery and chronic pain.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="prometheus.css">
 </head>
@@ -25,34 +24,21 @@
     <header class="hero-wrap">
       <span class="kicker">Restorative Harm Reduction &amp; Counselor Education</span>
       <h1>The Prometheus Rising Protocol</h1>
-      <p>A clinical and community education program connecting molecular pharmacology to the lived realities of recovery and chronic physical pain. It prepares counselors and peer mentors to support people managing opioid dependence, and it keeps accountability in the community instead of handing it to punishment.</p>
+      <p>A clinical and community education program connecting molecular pharmacology to the lived realities of recovery and chronic physical pain. It prepares counselors and peer mentors to support people managing opioid dependence, anchoring accountability within the community rather than delegating it to punishment.</p>
     </header>
 
     <div class="memoriam"><strong>In Memoriam:</strong> Dedicated to <strong>Jonathan M. Martin (1984–2024)</strong>. Honoring lived wisdom and mutual aid.</div>
 
-    <section class="card sanctuary" id="join">
-  <h2>The Prometheus Group Online Sanctuary</h2>
-  <p>Digital harm reduction spaces bring theoretical maps into direct contact with human territory. People connect through drop-in voice rooms (VC), check-ins, and peer accountability circles. Participants may keep their identities private and are invited to play, which is part of how the group learns.</p>
-  <div class="prescreen-box" id="contact">
-    <h3>Request Access &amp; Prescreening</h3>
-    <p class="prescreen-note">To protect community safety and ensure drop-in peer circles are appropriate for your current needs, invitation links are shared following a brief, confidential prescreening check-in.</p>
-    <form class="prescreen-form" id="prescreen-form">
-      <div class="form-row"><label for="user-name">Preferred Name or Handle</label><input type="text" id="user-name" name="name" maxlength="80" autocomplete="nickname" required placeholder="e.g. Alex (nicknames welcome)"></div>
-      <div class="form-row"><label for="user-email">Email Address</label><input type="email" id="user-email" name="email" maxlength="254" autocomplete="email" required placeholder="name@example.com"></div>
-      <div class="form-row"><label for="user-intent">What brings you to Prometheus Rising?</label><textarea id="user-intent" name="intent" rows="3" maxlength="1500" required placeholder="Briefly share what you are hoping to find or explore in the circles..."></textarea></div>
-      <div class="form-check"><label><input type="checkbox" id="user-agree" required><span>I understand that peer circles are mutual aid, not medical treatment or emergency psychiatric services. I agree to abide by the <a href="circles.html" target="_blank" rel="noopener">Circle Agreements</a>.</span></label></div>
-      <button type="submit" class="btn btn-discord">Submit Prescreening Request &rarr;</button>
-    </form>
-    <p class="note">Opens your email app for you to review and send. Please keep introductions brief; no medical details needed. If your email app does not open, contact <a href="mailto:shastaandziggy@gmail.com">shastaandziggy@gmail.com</a>.</p>
-    <p class="note" id="contact-status" role="status"></p>
-    <noscript><p>Please email Shasta directly to request a prescreening check-in.</p></noscript>
-  </div>
+    <section class="gateway-grid" aria-label="Program Pathways"><div class="gateway-card"><span class="badge">Community &amp; Mutual Aid</span><h2>For Peers &amp; Seekers</h2><p>Confidential, cost-free drop-in circles, lived-experience peer mentorship, and restorative community support.</p><a href="#sanctuary" class="btn btn-copper">Enter the Online Sanctuary →</a></div><div class="gateway-card"><span class="badge">Clinical &amp; Counselor Education</span><h2>For Clinicians &amp; Educators</h2><p>A seven-module curriculum bridging methadone pharmacodynamics, chronic pain, congenital disability, and systemic repair.</p><a href="#curriculum" class="btn btn-discord">Explore the Curriculum →</a></div></section><section class="card sanctuary" id="join">
+  <h2 id="sanctuary">The Prometheus Group Online Sanctuary</h2>
+  <p>Digital harm reduction spaces bring theoretical frameworks into direct contact with lived experience. Participants connect through drop-in voice rooms, structured check-ins, and peer accountability circles. Participants may use nicknames and engage through shared inquiry and mutual support.</p>
+  <div class="prescreening-box" id="contact"><h3>Request Access &amp; Prescreening</h3><p>Drop-in circles prioritize emotional and physical safety. Send a brief check-in email to receive circle times and invitation links.</p><div class="template-preview"><p><strong>Subject:</strong> Prometheus Circle Prescreening Request</p><p><strong>Body template:</strong></p><p class="template-body">Hello Shasta,<br><br>I would like to request prescreening for the Prometheus drop-in peer circles. Please send the intake information and access guidelines.</p></div><div class="action-row"><a href="mailto:shastaandziggy@gmail.com?subject=Prometheus%20Circle%20Prescreening%20Request&amp;body=Hello%20Shasta%2C%0A%0AI%20would%20like%20to%20request%20prescreening%20for%20the%20Prometheus%20drop-in%20peer%20circles.%20Please%20send%20the%20intake%20information%20and%20access%20guidelines." class="btn btn-discord">Open Email Client</a><button type="button" class="btn btn-copper" id="copy-template">Copy Template to Clipboard</button></div><p id="copy-status" role="status" aria-live="polite"></p><div id="copy-fallback" hidden=""><label for="template-text">Select and copy this template:</label><textarea id="template-text" rows="8" readonly=""></textarea></div><p class="note">Review and send the request in your email app. No medical details needed. You can also contact <a href="mailto:shastaandziggy@gmail.com">shastaandziggy@gmail.com</a> directly.</p></div>
 </section>
 
     <section class="card charter">
       <h2>Access Charter: No Financial Gatekeeping</h2>
       <p><strong>Permanently free peer support.</strong> Participation in drop-in circles and mutual aid groups costs nothing.</p>
-      <p><strong>Full scholarships for First Nations and low-income learners.</strong> Complete tuition and credentialing coverage for First Nations applicants and for people facing financial disruption.</p>
+      <p><strong>Full scholarships for First Nations and low-income learners.</strong> Complete tuition and credentialing coverage for First Nations applicants and individuals navigating financial barriers.</p>
     </section>
 
     <div class="section-head"><h2>The Protocol</h2></div>
@@ -60,25 +46,25 @@
       <a class="card" href="framework.html">
         <span class="eyebrow">Part 1 · Why</span>
         <h3>Framework</h3>
-        <p>Five commitments that shape every module and circle: restorative justice, anti-oppressive practice, trauma-informed care, transformative learning, and harm reduction.</p>
+        <p>Five core commitments shaping every module and circle: restorative justice, anti-oppressive practice, trauma-informed care, transformative learning, and harm reduction.</p>
         <p><strong>Read the framework →</strong></p>
       </a>
       <a class="card" href="curriculum.html">
         <span class="eyebrow">Part 2 · What</span>
         <h3>Curriculum</h3>
-        <p>Seven modules over twelve weeks, each with outcomes, a practice activity, a reflection prompt, and a way to show learning.</p>
+        <p>Seven modules spanning twelve weeks, each pairing concrete learning outcomes with practice activities, reflection prompts, and demonstrable competencies.</p>
         <p><strong>See the modules →</strong></p>
       </a>
       <a class="card" href="circles.html">
         <span class="eyebrow">Part 3 · How</span>
         <h3>Peer Circles</h3>
-        <p>Circle agreements, roles, a session format with a built-in timer, and the steps the group follows when harm happens inside it.</p>
+        <p>Circle agreements, defined roles, a timed session format, and transparent protocols for addressing relational harm.</p>
         <p><strong>Open the circle guide →</strong></p>
       </a>
       <a class="card" href="implementation.html">
         <span class="eyebrow">Part 4 · Where it goes</span>
         <h3>Implementation</h3>
-        <p>Core ideology, values, envisioned future, long-range goals, a phased roadmap, and the plan for change and evaluation.</p>
+        <p>Core ideology, shared values, long-range goals, a phased roadmap, and evaluation methodologies.</p>
         <p><strong>View the plan →</strong></p>
       </a>
     </div>
@@ -86,54 +72,54 @@
       <a class="card" href="cheat-sheets.html">
         <span class="eyebrow">Quick reference</span>
         <h3>Cheat Sheets</h3>
-        <p>One-glance cards for the field: medication clocks, language swaps, overdose response, scope of practice, and crisis numbers.</p>
+        <p>Concise field guides covering medication pharmacodynamics, inclusive language swaps, overdose response, scope of practice, and crisis contacts.</p>
         <p><strong>Open the cheat sheets →</strong></p>
       </a>
       <a class="card" href="in-ten-minutes.html">
         <span class="eyebrow">Learn fast</span>
         <h3>The Protocol in Ten Minutes</h3>
-        <p>A whole session in seven short steps, with what to do and say at each one. Read it once and you have the shape of the work.</p>
+        <p>A complete session outlined in seven direct steps. Review it once to grasp the structural cadence of the work.</p>
         <p><strong>Start the walkthrough →</strong></p>
       </a>
     </div>
     <p class="note refs-note">Questions? Read the <a href="faq.html">FAQ</a>. Sources: <a href="sources.html">every source with DOI and Google Books links</a>.</p>
 
-    <h2 class="rule-h">Core Training Curriculum</h2>
+    <h2 class="rule-h" id="curriculum">Core Training Curriculum</h2>
     <div class="grid-2">
       <div class="card flat">
         <span class="badge mod">Module 1</span>
         <h3>The Pharmacology of Lived Experience</h3>
-        <p>Examines the divergent clocks of methadone: maintenance coverage suppresses withdrawal for 24 to 36 hours, while analgesia ceases after 6 to 8 hours.</p>
+        <p>Examines the divergent temporal clocks of methadone: maintenance coverage suppresses withdrawal for 24 to 36 hours, while analgesia ceases after 6 to 8 hours.</p>
       </div>
       <div class="card flat">
         <span class="badge mod">Module 2</span>
         <h3>Dismantling the Single Story</h3>
-        <p>Deconstructs how reflexive "drug-seeking" labels render chronic pain invisible. Counselors practice embracing clinical ambiguity instead of resolving it through suspicion of self-reports.</p>
+        <p>Deconstructs how reflexive punitive labeling renders chronic pain invisible. Counselors practice embracing clinical ambiguity rather than resorting to suspicion.</p>
       </div>
       <div class="card flat">
         <span class="badge mod">Module 3</span>
         <h3>Congenital Disability &amp; Lifelong Pain</h3>
-        <p>Prepares clinicians for the complex presentations of adults with spina bifida. Teaches the differential diagnosis of nociceptive joint strain versus neuropathic lesions.</p>
+        <p>Prepares clinicians for the complex presentations of adults with spina bifida, teaching differential diagnosis between nociceptive joint strain and neuropathic lesions.</p>
       </div>
       <div class="card flat">
         <span class="badge mod">Module 4</span>
         <h3>Peer Mentorship &amp; Communitas</h3>
-        <p>Engages people with lived experience of both chronic pain and opioid recovery as peer mentors, moving the community from liminality toward communitas through mutual accountability.</p>
+        <p>Engages people with lived experience of both chronic pain and opioid recovery as peer mentors, guiding the community from liminality toward communitas through mutual accountability.</p>
       </div>
       <div class="card flat">
         <span class="badge mod">Module 5</span>
         <h3>Trauma, Culture &amp; Cumulative Harm</h3>
-        <p>Applies the six trauma-informed principles to people carrying cumulative, historical, and colonial trauma, and examines consultation that avoids paternalism.</p>
+        <p>Applies trauma-informed principles to individuals carrying cumulative, historical, and colonial trauma, fostering consultation models that reject paternalism.</p>
       </div>
       <div class="card flat">
         <span class="badge mod">Module 6</span>
         <h3>Community Accountability &amp; Repair</h3>
-        <p>Practices restorative responses to harm in online and in-person groups, replacing punishment with repair, and keeps the person's dignity in the room.</p>
+        <p>Practices restorative responses to harm within groups, replacing punitive measures with relational repair while preserving individual dignity.</p>
       </div>
       <div class="card flat">
         <span class="badge mod">Module 7</span>
         <h3>Ethics, Scope &amp; Reflexive Practice</h3>
-        <p>Clarifies what counselors and peers do and do not do, how to refer, and how to examine one's own power, bias, and limits.</p>
+        <p>Clarifies professional boundaries, referral pathways, and methods for examining personal power, bias, and scope limitations.</p>
       </div>
     </div>
     <p><a href="curriculum.html"><strong>Full curriculum with outcomes and assessments →</strong></a></p>
@@ -141,16 +127,16 @@
     <section class="card accent-card">
       <span class="badge" style="background: var(--accent-soft); color: var(--accent-ink);">Research</span>
       <h3>Steady State: Methadone, Chronic Pain, Spina Bifida, and the Psychology of Recovery</h3>
-      <p>The research paper behind the protocol examines methadone maintenance at the intersection of opioid use disorder, chronic pain, and congenital disability.</p>
-      <p><a href="steady-state.html" style="font-weight: 600;">Read the paper →</a> · <a href="faq.html" style="font-weight: 600;">Read the FAQ →</a></p>
+      <p>The foundational research paper examining methadone maintenance at the intersection of opioid use disorder, chronic pain, and congenital disability.</p>
+      <p><a href="steady-state.html">Read the paper →</a> · <a href="faq.html">Read the FAQ →</a></p>
     </section>
 
     <section class="card support-card" id="support">
       <span class="eyebrow">Support the work</span>
       <h2>Keep the circles free</h2>
-      <p>Contributions help fund free peer circles, scholarships for First Nations and low-income learners, and open curriculum development. Giving never unlocks access: circles and scholarships stay free whether or not anyone donates, and contributions do not shape what the protocol says.</p>
-      <p><a class="btn btn-copper" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=sfox1%40saybrook.edu&amp;item_name=Prometheus%20Rising%20Protocol&amp;currency_code=USD" target="_blank" rel="noopener noreferrer">Contribute via PayPal ↗</a></p>
-      <p class="note">PayPal opens in a new tab. You choose the amount there.</p>
+      <p>Contributions fund free peer circles, scholarships for First Nations and low-income learners, and open curriculum development. Giving never conditions access: circles and scholarships remain free regardless of donations, and financial contributions do not alter the protocol.</p>
+      <p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=sfox1%40saybrook.edu&amp;item_name=Prometheus%20Rising%20Protocol&amp;currency_code=USD" rel="noopener noreferrer" target="_blank">Contribute via PayPal ↗</a></p>
+      <p class="note">PayPal opens in a new tab. You select the contribution amount directly.</p>
     </section>
 
     <aside class="epistemic-warn crisis"><strong>If someone is in danger</strong>
