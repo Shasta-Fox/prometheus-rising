@@ -1,5 +1,5 @@
 'use strict';
-const template = "To: shastaandziggy@gmail.com\nSubject: Prometheus Circle Prescreening Request\n\nHello Shasta,\n\nI would like to request prescreening for the Prometheus drop-in peer circles. Please send the intake information and access guidelines.";
+const template = "To: prometheusrisingprotocol@gmail.com\nSubject: Prometheus Protocol Inquiry & Support Request\n\nHello Prometheus Team,\n\nI am contacting you regarding [Prescreening & Discord Access / Curriculum Question / Community Support]:\n\n";
 document.getElementById('copy-template').addEventListener('click', async function () {
   const status = document.getElementById('copy-status');
   try {
