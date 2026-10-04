@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Prometheus Peer Circles</title>
+  <meta name="description" content="Circle agreements, roles, a session timer, and restorative harm-response steps for the Prometheus peer circles.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/prometheus.css">
+  
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="brand-logo"><img src="mark.svg" width="34" height="34" alt="">Prometheus <span>Rising</span></a>
+      <nav class="nav-links" aria-label="Main"><a href="framework.html">Framework</a><a href="curriculum.html">Curriculum</a><a href="circles.html" aria-current="page">Peer Circles</a><a href="implementation.html">Implementation</a><a href="cheat-sheets.html">Cheat Sheets</a><a href="in-ten-minutes.html">In Ten Minutes</a><a href="faq.html">FAQ</a><a href="sources.html">Sources</a><a class="out" href="https://claude.ai/artifact/UVeJeboYxFbc3dQozc2u5y" target="_blank" rel="noopener noreferrer">Star Nootropics ↗</a></nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <article class="paper">
+      <header class="hero-wrap">
+        <span class="kicker">Part 3 · Peer Circles</span>
+        <h1>How the Circles Work</h1>
+        <p class="lead-paragraph">Drop-in voice rooms and peer accountability circles are the living part of the protocol. This guide gives facilitators and participants one shared way to start, hold, and close a session, and one shared way to respond when something goes wrong.</p>
+      </header>
+
+      <h2>Circle agreements</h2>
+      <p>Read these aloud at the start of every session. A group may add to them with agreement from everyone present.</p>
+      <ol class="agreements">
+        <li><strong>Passing is always allowed.</strong> Nobody has to share, explain, or answer.</li>
+        <li><strong>Speak from your own experience.</strong> Use "I". Do not give medical advice or tell anyone what to do with their medication.</li>
+        <li><strong>What is said here stays here.</strong> What is learned here can leave. Confidentiality has limits: serious risk of harm to someone may require outside help.</li>
+        <li><strong>Make room.</strong> Notice how long you have spoken and who has not.</li>
+        <li><strong>Cameras and names are your choice.</strong> Use a nickname if you like.</li>
+        <li><strong>Curiosity over certainty.</strong> Listen for the person, not for a diagnosis or a label.</li>
+        <li><strong>Harm gets repaired.</strong> If someone is hurt, the group slows down and follows the harm-response steps below.</li>
+        <li><strong>Play is welcome.</strong> Laughter and lightness are part of how this group learns (Lugones, 1990).</li>
+      </ol>
+
+      <h2>Roles</h2>
+      <table>
+        <thead><tr><th>Role</th><th>What they do</th></tr></thead>
+        <tbody>
+          <tr><td>Facilitator</td><td>Opens and closes, reads the agreements, keeps the shape of the session, and holds the harm-response process. Rotates among trained peers.</td></tr>
+          <tr><td>Timekeeper</td><td>Keeps the clock and gives gentle time cues.</td></tr>
+          <tr><td>Witness</td><td>Listens for what is not said, notices who is quiet, and offers a short reflection at the end.</td></tr>
+          <tr><td>Steward (moderator)</td><td>Watches the text channel and server, handles safety, and is the contact for private concerns.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Session format and timer</h2>
+      <p>Pick a length and the timer lays out the session. Times are suggestions, and a facilitator may adjust them.</p>
+
+      <div class="agenda card flat" id="agenda-tool">
+        <div class="agenda-controls">
+          <label for="len">Session length</label>
+          <select id="len">
+            <option value="45">45 minutes</option>
+            <option value="60" selected>60 minutes</option>
+            <option value="90">90 minutes</option>
+          </select>
+          <label for="size">People</label>
+          <select id="size">
+            <option value="3">3–4</option>
+            <option value="6" selected>5–8</option>
+            <option value="10">9–12</option>
+          </select>
+        </div>
+        <ol class="agenda-list" id="agenda-list"></ol>
+        <p class="note" id="agenda-note"></p>
+      </div>
+
+      <h2 id="harm-response">When harm happens: the response steps</h2>
+      <p>Harm includes cruelty, dismissing someone's pain, sharing something told in confidence, pressure to use or to stop using, and any breach of the agreements. The goal is repair. The steps below are meant to be followed in order and may take place over days.</p>
+      <ol class="steps">
+        <li><strong>Pause.</strong> The facilitator names that the group is pausing and checks that everyone is safe to continue. If anyone is at risk, go straight to the crisis path below.</li>
+        <li><strong>Hear.</strong> Each person involved is heard separately, in their own words, by a facilitator or steward. Nobody is asked to confront the other in public.</li>
+        <li><strong>Name the impact.</strong> What happened, who was affected, and how. Stay with facts and effects.</li>
+        <li><strong>Ask what is needed.</strong> The person harmed says what would help. The person responsible says what they can do. A third voice may help each of them think it through.</li>
+        <li><strong>Agree on repair.</strong> A written, specific, time-limited agreement: an apology if the person harmed wants one, a change in behavior, a break from a space, a check-in.</li>
+        <li><strong>Follow up.</strong> A steward checks in after one week and one month, and writes down what the group learned. The learning is shared in general terms and never in a way that identifies anyone.</li>
+        <li><strong>Escalate only for safety.</strong> If someone remains a danger to others or refuses repair, the stewards may remove them for safety. Removal is explained, reviewed by a second steward, and comes with referrals to other support.</li>
+      </ol>
+
+      <h2>Crisis path</h2>
+      <ol class="steps">
+        <li>Stay with the person. Ask directly whether they are thinking of hurting themselves or whether someone is in danger.</li>
+        <li>Share the numbers below and, if the person agrees, stay on the line while they call. In an emergency, call local emergency services.</li>
+        <li>Tell a steward. Afterward, a steward checks in with the facilitator and the group.</li>
+      </ol>
+      <aside class="epistemic-warn crisis"><strong>If someone is in danger</strong>
+<p>Peer circles and this protocol are not emergency services. In the United States, call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline) or call <strong>911</strong> for a medical emergency. SAMHSA's National Helpline is <strong>1-800-662-4357</strong> (free, confidential, 24/7). Carry naloxone where opioids are present and learn how to use it. Outside the US, use your local emergency number.</p></aside>
+
+      <h2>What circles are not</h2>
+      <ul>
+        <li>They are not treatment, and they do not replace a prescriber, a counselor, or a doctor.</li>
+        <li>They are not a place to share information about getting drugs or to tell anyone to start, stop, or change a medication.</li>
+        <li>They are not a place to recruit, sell, or promote products. Peer spaces stay free of commercial promotion.</li>
+      </ul>
+
+      <h2>Server safety checklist for stewards</h2>
+      <ul>
+        <li>Verification step for new members and a short welcome message that links the agreements.</li>
+        <li>A private channel for concerns that only stewards can read.</li>
+        <li>No screenshots, recordings, or transcripts without the consent of everyone present.</li>
+        <li>Content notes before sharing heavy material, and a channel for lighter conversation.</li>
+        <li>Written steward onboarding and a monthly review of what is and is not working.</li>
+      </ul>
+    </article>
+  </main>
+  <script>
+  (function () {
+    var lenEl = document.getElementById("len"), sizeEl = document.getElementById("size");
+    var list = document.getElementById("agenda-list"), note = document.getElementById("agenda-note");
+    function render() {
+      var total = parseInt(lenEl.value, 10), size = parseInt(sizeEl.value, 10);
+      var fixed = [
+        ["Arrive and settle", 0.07, "Greetings. A moment of quiet or a light game."],
+        ["Agreements and check-in", 0.13, "Read the agreements. One sentence each: how am I arriving? Passing is fine."],
+        ["Main sharing or topic", 0.45, "Open sharing or a prompt from the current module. Speak from your own experience."],
+        ["Reflection", 0.15, "The witness offers what they heard. Others add what stayed with them."],
+        ["Commitments", 0.10, "One small thing each person might do this week, if they want to."],
+        ["Close", 0.10, "A closing round and a reminder of the crisis numbers."]
+      ];
+      var out = [], used = 0;
+      for (var i = 0; i < fixed.length; i++) {
+        var m = i === fixed.length - 1 ? total - used : Math.round(total * fixed[i][1]);
+        used += m;
+        out.push("<li><span class=\"mins\">" + m + " min</span><div><strong>" + fixed[i][0] + "</strong><p>" + fixed[i][2] + "</p></div></li>");
+      }
+      list.innerHTML = out.join("");
+      var main = Math.round(total * 0.45);
+      var per = Math.max(1, Math.round((main / size) * 10) / 10);
+      note.textContent = "With " + size + " people, the main sharing block gives about " + per + " minutes each if everyone speaks. Not everyone has to.";
+    }
+    lenEl.addEventListener("change", render);
+    sizeEl.addEventListener("change", render);
+    render();
+  })();
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a class="brand-logo" href="index.html"><img src="mark.svg" width="28" height="28" alt="">Prometheus <span>Rising</span></a></p>
+      <p class="foot-lead">Restorative harm reduction and counselor education. An independent initiative by Shasta Fox, dedicated to Jonathan M. Martin (1984–2024).</p>
+      <nav aria-label="Footer">
+        <a href="https://discord.gg/YOUR_INVITE_CODE" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+        <a href="https://earth-and-star-academy.shastafox.chatgpt.site/" target="_blank" rel="noopener noreferrer">Earth &amp; Star Academy ↗</a>
+        <a href="https://www.youtube.com/@philosophyintheforest3219" target="_blank" rel="noopener noreferrer">Philosophy in the Forest ↗</a>
+        <a href="faq.html">FAQ</a>
+        <a href="steady-state.html">Research paper</a>
+        <a href="index.html#support">Support</a>
+        <a href="https://claude.ai/artifact/UVeJeboYxFbc3dQozc2u5y" target="_blank" rel="noopener noreferrer">Star Nootropics research ↗</a>
+      </nav>
+      <p>Contact: shastaandziggy@gmail.com</p>
+      <p>© 2026 Prometheus Rising. Educational program, not medical advice, diagnosis, or treatment. In an emergency call 911 (US) or call or text 988.</p>
+    </div>
+  </footer>
+</body>
+</html>
