@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Prometheus Rising mark">
+<path d="M4 46h56" stroke="#ea580c" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M14 46a18 18 0 0 1 36 0z" fill="#ea580c"/>
+<path d="M32 8v8M12.5 16.5l5.5 5.5M51.5 16.5L46 22M4 32h8M52 32h8" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M22 54h20" stroke="#ea580c" stroke-width="4" stroke-linecap="round" fill="none" opacity=".55"/>
+</svg>
