@@ -227,3 +227,17 @@ a.card:hover { border-top-color: var(--prometheus); }
 
 /* Program pathways and email template */
 .gateway-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin:2rem 0}.gateway-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:.8rem}.gateway-card h2{font-size:1.5rem}.gateway-card .btn{margin-top:auto;white-space:normal}.prescreening-box{background:var(--bg-surface-sunken);padding:1.5rem;border-radius:var(--radius-sm);margin-top:1rem}.template-preview{padding:1rem;background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin:1rem 0}.action-row{display:flex;gap:.75rem;flex-wrap:wrap}.action-row .btn{white-space:normal}#template-text{width:100%;font:inherit;padding:.75rem}#sanctuary,#curriculum,#join{scroll-margin-top:10rem}@media(max-width:640px){.gateway-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Community action and kit distribution */
+#community-action,#local-resources{scroll-margin-top:10rem}
+.action-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;margin:2rem 0 3rem}
+@media(min-width:768px){.action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.action-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:2rem;display:flex;flex-direction:column;gap:1rem;min-width:0}
+.action-card h3{margin-top:0}.kit-list{margin-bottom:1rem;padding-left:1.25rem}.kit-list li{margin-bottom:.5rem}
+#community-action .btn-primary,#community-action .btn-secondary{display:inline-block;text-align:center;padding:.75rem 1.5rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:700;margin-top:auto;transition:opacity .2s ease;line-height:1.5}
+#community-action .btn-primary{background:var(--prometheus);color:#fff}
+#community-action .btn-secondary{background:transparent;color:var(--prometheus);border:2px solid var(--prometheus)}
+#community-action .btn-primary:hover,#community-action .btn-secondary:hover{opacity:.85}
+.kit-actions{margin-top:auto;display:grid;gap:.85rem}.kit-request{font-weight:600}
+@media(max-width:480px){.action-card{padding:1.25rem}}
+@media(prefers-reduced-motion:reduce){#community-action .btn-primary,#community-action .btn-secondary{transition:none}}
