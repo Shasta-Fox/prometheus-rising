@@ -1,0 +1,152 @@
+/* Prometheus Rising — Course page. Loads after base.css and prometheus.css and uses their tokens. */
+
+.vh { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+#paths, #plan, #foundations, #f1, #f2, #f3, #map, #tuition, #ledger, #readings, #ethics, #teach, #questions { scroll-margin-top: 7rem; }
+.section-lead { max-width: 68ch; margin: -0.5rem 0 1.5rem; font-size: 1.02rem; }
+
+/* Hero facts and in-page links */
+.fact-strip { position: relative; list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.25rem; }
+.fact-strip li { font-size: 0.82rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: var(--radius-pill); background: var(--bg-surface-sunken); border: 1px solid var(--border); color: var(--text-main); }
+.fact-strip li.fact-flag { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn-ink); }
+.toc-chips { display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; margin: 0 0 2.25rem; }
+.toc-chips a { font-size: 0.82rem; font-weight: 600; padding: 0.3rem 0.85rem; border-radius: var(--radius-pill); border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-muted); }
+.toc-chips a:hover { color: var(--prometheus); border-color: var(--ember-border); }
+
+/* Path cards */
+.path-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1.25rem; margin-bottom: 1rem; }
+.path-card { background: var(--bg-surface); border: 1px solid var(--border); border-top: 4px solid var(--path-line); border-radius: var(--radius-md); box-shadow: var(--shadow-md); padding: 1.4rem 1.35rem 1.15rem; display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; }
+.path-volunteer { --path-line: var(--success); --path-bg: var(--success-soft); --path-ink: var(--success-ink); }
+.path-peer { --path-line: var(--prometheus); --path-bg: var(--ember-soft); --path-ink: var(--prometheus); }
+.path-clinician { --path-line: var(--accent); --path-bg: var(--accent-soft); --path-ink: var(--accent-ink); }
+.path-card .badge { align-self: flex-start; background: var(--path-bg); color: var(--path-ink); text-transform: none; letter-spacing: 0.01em; font-size: 0.76rem; }
+.path-card h3 { font-size: 1.35rem; }
+.path-card > p { font-size: 0.95rem; }
+.path-facts { margin-top: auto; }
+.path-facts > div { padding: 0.5rem 0; border-top: 1px dashed var(--border); }
+.path-facts dt { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+.path-facts dd { font-size: 0.93rem; line-height: 1.5; color: var(--text-body); }
+
+/* Planner */
+.planner { border-top: 3px solid var(--prometheus); margin-top: 1.5rem; }
+.planner h2 { font-size: 1.6rem; }
+.planner fieldset { border: 0; margin: 0 0 1.4rem; padding: 0; min-width: 0; }
+.planner legend, .track-title { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.55rem; padding: 0; }
+.seg-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.seg-row label, .seat-list label { position: relative; display: block; cursor: pointer; }
+.seg-row input, .seat-list input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.seg-row span { display: inline-block; padding: 0.55rem 1.3rem; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--bg-surface); font-weight: 600; font-size: 0.95rem; color: var(--text-muted); transition: background 0.15s, color 0.15s, border-color 0.15s; }
+.seg-row label:hover span { border-color: var(--prometheus); color: var(--text-main); }
+.seg-row input:checked + span { background: var(--prometheus); border-color: var(--prometheus); color: var(--bg-surface); }
+.seg-row input:focus-visible + span, .seat-list input:focus-visible + .seat { outline: 3px solid var(--prometheus); outline-offset: 2px; }
+.seat-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 178px), 1fr)); gap: 0.55rem; }
+.seat { display: flex; flex-direction: column; gap: 0.15rem; height: 100%; padding: 0.7rem 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-surface); transition: border-color 0.15s, background 0.15s; }
+.seat-list label:hover .seat { border-color: var(--prometheus); }
+.seat b { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+.seat strong { font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.15; color: var(--text-main); font-variant-numeric: tabular-nums; }
+.seat small { font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); }
+.seat-list input:checked + .seat { border-color: var(--prometheus); background: var(--ember-soft); box-shadow: inset 0 0 0 1px var(--prometheus); }
+.seat-free { font-size: 0.95rem; padding: 0.75rem 1rem; border-radius: var(--radius-sm); background: var(--success-soft); color: var(--success-ink); font-weight: 600; }
+
+/* Week track */
+.track-wrap { margin: 0.25rem 0 1.4rem; }
+.track { list-style: none; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.9rem 0.55rem; margin: 0 0 0.9rem; }
+.track-group { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
+.track-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); white-space: nowrap; }
+.track-nodes { list-style: none; display: flex; gap: 0.3rem; }
+.node { position: relative; width: 2.35rem; height: 2.35rem; border-radius: 50%; display: grid; place-items: center; font-size: 0.84rem; font-weight: 700; font-variant-numeric: tabular-nums; border: 2px dashed var(--border); color: var(--text-muted); background: transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.node.in.free { background: var(--success); border: 2px solid var(--success); color: var(--bg-surface); }
+.node.in.paid { background: var(--prometheus); border: 2px solid var(--prometheus); color: var(--bg-surface); }
+.track-gate { align-self: stretch; display: flex; align-items: flex-end; padding: 0 0.15rem; }
+.track-gate span { display: block; width: 0; height: 100%; min-height: 3.6rem; border-left: 2px dashed var(--warning); }
+.track-key { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; font-size: 0.82rem; color: var(--text-muted); }
+.track-key li { display: inline-flex; align-items: center; gap: 0.45rem; }
+.key-dot { width: 0.95rem; height: 0.95rem; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.key-dot.free { background: var(--success); }
+.key-dot.paid { background: var(--prometheus); }
+.key-dot.out { border: 2px dashed var(--border); }
+.key-gate { width: 0; height: 1rem; border-left: 2px dashed var(--warning); display: inline-block; margin: 0 0.4rem; }
+
+/* Plan summary and actions */
+.plan-stats { margin-bottom: 0.9rem; }
+.plan-stats strong { font-size: 1.75rem; }
+.plan-outcome { font-size: 0.98rem; color: var(--text-main); max-width: 68ch; margin-bottom: 1rem; }
+.check { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.92rem; margin-bottom: 1.1rem; cursor: pointer; }
+.check input { margin-top: 0.3rem; flex-shrink: 0; accent-color: var(--prometheus); width: 1rem; height: 1rem; }
+.plan-actions { margin-bottom: 0.5rem; }
+.btn-ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+.btn-ghost:hover { color: var(--prometheus); border-color: var(--prometheus); opacity: 1; }
+#plan-status:empty { display: none; }
+#plan-fallback textarea { width: 100%; font: inherit; font-size: 0.9rem; padding: 0.75rem; margin-top: 0.4rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-surface); color: var(--text-main); }
+.planner .note { margin-top: 0.75rem; }
+
+/* Foundations cards reuse the curriculum module styles */
+#foundations + .section-lead + .module { margin-top: 0; }
+
+/* Curriculum map. The table scrolls inside its wrapper on narrow screens; positioning the wrapper keeps the
+   visually hidden labels inside that scroll area instead of widening the page. */
+#map .table-wrap, #tuition .table-wrap { position: relative; }
+.map-table td.yes { color: var(--success-ink); font-weight: 700; text-align: center; }
+.map-table td.no { color: var(--text-muted); text-align: center; }
+.map-table th:nth-child(n+3) { text-align: center; }
+.map-table td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--text-muted); }
+.free-tag { display: inline-block; margin-left: 0.35rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.1rem 0.5rem; border-radius: var(--radius-pill); background: var(--success-soft); color: var(--success-ink); }
+
+/* Tuition */
+.price-table th[scope="row"] { font-weight: 700; color: var(--text-main); white-space: nowrap; }
+.price-table td.amt { font-family: var(--font-serif); font-weight: 700; font-size: 1.08rem; color: var(--text-main); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tuition-notes { list-style: none; display: grid; gap: 0.5rem; margin-top: 1rem; }
+.tuition-notes li { font-size: 0.95rem; padding-left: 1rem; border-left: 3px solid var(--ember-border); }
+.price-basis h3 { font-size: 1.25rem; }
+.price-basis p { max-width: 70ch; }
+.price-sources { margin-top: 1rem; }
+
+/* Evidence ledger */
+.ledger-legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0.6rem; margin: 0 0 1.25rem; }
+.legend-item { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem 0.9rem; }
+.legend-item p { font-size: 0.88rem; margin-top: 0.35rem; }
+.status { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: var(--radius-sm); border: 1px solid transparent; }
+.st-supported { background: var(--success-soft); color: var(--success-ink); }
+.st-preliminary { background: var(--warn-bg); color: var(--warn-ink); border-color: var(--warn-border); }
+.st-hypothesis { background: var(--accent-soft); color: var(--accent-ink); }
+.claims { list-style: none; display: grid; gap: 0.75rem; margin-bottom: 1rem; }
+.claim { background: var(--bg-surface); border: 1px solid var(--border); border-left: 4px solid var(--claim-line); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.15rem; box-shadow: var(--shadow-sm); }
+.claim[hidden] { display: none; }
+.c-supported { --claim-line: var(--success); }
+.c-preliminary { --claim-line: var(--warning); }
+.c-hypothesis { --claim-line: var(--accent); }
+.claim h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; margin: 0.45rem 0 0.35rem; }
+.claim p { font-size: 0.94rem; max-width: 72ch; }
+.claim details { margin: 0.55rem 0 0; }
+.claim summary { font-size: 0.86rem; }
+.claim details p { margin-top: 0.4rem; color: var(--text-body); }
+
+/* Readings */
+.design-key { padding: 1rem 1.25rem; }
+.design-key summary { font-size: 0.95rem; }
+.design-key .kv { margin-top: 0.6rem; }
+.reading-group { margin-top: 1.75rem; }
+.reading-group[hidden] { display: none; }
+.group-h { font-size: 1.3rem; border-bottom: 2px solid var(--border); padding-bottom: 0.45rem; margin-bottom: 0.9rem; }
+.ref-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.4rem; }
+.place { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--prometheus); margin-right: 0.2rem; }
+.dtag { font-size: 0.72rem; font-weight: 600; padding: 0.12rem 0.55rem; border-radius: var(--radius-pill); background: var(--bg-surface-sunken); border: 1px solid var(--border); color: var(--text-body); }
+.dtag.oa { background: var(--success-soft); border-color: transparent; color: var(--success-ink); }
+.dtag.chk { background: var(--accent-soft); border-color: transparent; color: var(--accent-ink); }
+
+/* Ethics code */
+#ethics { margin-top: 2.5rem; }
+.ethics-list { display: grid; gap: 0.7rem; margin-top: 1rem !important; }
+.ethics-list li { font-size: 0.97rem; line-height: 1.55; }
+.ethics-list strong { color: var(--text-main); }
+
+#questions h2 { font-size: 1.6rem; }
+
+@media (max-width: 640px) {
+  .node { width: 2.05rem; height: 2.05rem; font-size: 0.78rem; }
+  .track { gap: 0.75rem 0.45rem; }
+  .plan-stats strong { font-size: 1.5rem; }
+  .map-table { font-size: 0.88rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .node, .seat, .seg-row span { transition: none; }
+}

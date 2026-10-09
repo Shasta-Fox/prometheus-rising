@@ -241,3 +241,8 @@ a.card:hover { border-top-color: var(--prometheus); }
 .kit-actions{margin-top:auto;display:grid;gap:.85rem}.kit-request{font-weight:600}
 @media(max-width:480px){.action-card{padding:1.25rem}}
 @media(prefers-reduced-motion:reduce){#community-action .btn-primary,#community-action .btn-secondary{transition:none}}
+
+/* Crisis box: keep 988, 911, and the SAMHSA number inline in the sentence. Without this rule, the box's
+   label style also applied to these numbers and broke each one onto its own line. */
+.epistemic-warn p strong,
+.crisis p strong:first-child { display: inline; font-size: inherit; text-transform: none; letter-spacing: normal; margin: 0; color: var(--text-main); }
