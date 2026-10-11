@@ -116,6 +116,15 @@
 
         <label class="check"><input type="checkbox" id="opt-es"> I would join a Spanish-language cohort if one opens.</label>
 
+        <fieldset class="seg pay-plan" id="pay-field">
+          <legend>Payment</legend>
+          <div class="seg-row">
+            <label><input type="radio" name="payplan" value="1" checked=""><span>In full</span></label>
+            <label><input type="radio" name="payplan" value="2"><span>2 payments</span></label>
+            <label><input type="radio" name="payplan" value="3"><span>3 payments</span></label>
+          </div>
+        </fieldset>
+
         <div class="action-row plan-actions">
           <a class="btn btn-copper" id="plan-mail" href="mailto:prometheusrisingprotocol@gmail.com">Email this seat request</a>
           <button type="button" class="btn btn-discord" id="plan-copy">Copy request</button>
@@ -126,7 +135,16 @@
           <label for="plan-text">Select and copy this text:</label>
           <textarea id="plan-text" rows="10" readonly=""></textarea>
         </div>
-        <p class="note">Requesting a seat commits you to nothing. The team replies with cohort dates and, for a paid seat, a payment link. No medical details needed.</p>
+        <div class="pay-box" id="pay-box" hidden="">
+          <h3 class="track-title">Pay tuition</h3>
+          <p class="pay-lead" id="pay-lead"></p>
+          <div class="action-row pay-actions">
+            <a class="btn btn-paypal" id="pay-btn" href="https://paypal.me/ShastaLFox/100USD" target="_blank" rel="noopener noreferrer">Pay with PayPal</a>
+          </div>
+          <p class="note pay-later" id="pay-later" hidden=""></p>
+          <p class="note">PayPal opens with the amount filled in. It shows the payment going to Shasta Fox, who runs Prometheus Rising. In the PayPal note, write your name and your seat. Pay any time before week 4; the refund is in full until week 4 begins.</p>
+        </div>
+        <p class="note">Requesting a seat commits you to nothing. The team replies with cohort dates. No medical details needed.</p>
       </div>
     </section>
 
@@ -202,7 +220,8 @@
           </tbody>
         </table></div>
         <ul class="tuition-notes">
-          <li><strong>Payment plans.</strong> Any paid seat can be split into two or three payments at no extra cost.</li>
+          <li><strong>Pay online.</strong> PayPal opens with the amount filled in: Community <a href="https://paypal.me/ShastaLFox/50USD" data-pay-amount="50" target="_blank" rel="noopener noreferrer">$50</a>, <a href="https://paypal.me/ShastaLFox/100USD" data-pay-amount="100" target="_blank" rel="noopener noreferrer">$100</a>, or <a href="https://paypal.me/ShastaLFox/150USD" data-pay-amount="150" target="_blank" rel="noopener noreferrer">$150</a>; Standard <a href="https://paypal.me/ShastaLFox/300USD" data-pay-amount="300" target="_blank" rel="noopener noreferrer">$300</a>; Sustainer <a href="https://paypal.me/ShastaLFox/600USD" data-pay-amount="600" target="_blank" rel="noopener noreferrer">$600</a>. In the PayPal note, write your name and your seat. Employer-paid seats are invoiced.</li>
+          <li><strong>Payment plans.</strong> Any paid seat can be split into two or three payments at no extra cost. Choose the payments in the <a href="#plan">planner</a>, which shows each amount.</li>
           <li><strong>Refunds.</strong> Full refund until week 4 begins. After that, you can move your seat to a later cohort at no cost.</li>
           <li><strong>Where tuition goes.</strong> Live facilitation, stipends for peer co-teachers, scholarship seats, and course materials.</li>
         </ul>

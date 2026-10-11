@@ -150,3 +150,11 @@
 @media (prefers-reduced-motion: reduce) {
   .node, .seat, .seg-row span { transition: none; }
 }
+
+/* Tuition payment (PayPal) */
+.pay-plan { margin-bottom: 1.1rem; }
+.pay-box { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.pay-lead { margin: 0 0 0.75rem; }
+.btn-paypal { background: #ffc439; color: #111; }
+.btn-paypal:hover { color: #111; }
+.pay-later a, .tuition-notes a[data-pay-amount] { font-weight: 600; }

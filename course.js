@@ -3,6 +3,7 @@
    The page works without this script: the paths, map, tuition table, ledger, and readings are plain HTML. */
 (function () {
   var EMAIL = 'prometheusrisingprotocol@gmail.com';
+  var PAYPAL = 'https://paypal.me/ShastaLFox';  /* PayPal.me link for tuition: the one place to change it */
 
   var GROUPS = [
     { id: 'F', label: 'Foundations', title: 'Foundations', weeks: [1, 2, 3], free: true },
@@ -48,14 +49,25 @@
   var TOTAL_HOURS = 2.5;  /* session plus about an hour of reading, practice, and reflection */
 
   function $(id) { return document.getElementById(id); }
-  function money(n) { return '$' + n; }
+  function money(n) { return '$' + (Math.round(n * 100) % 100 ? n.toFixed(2) : String(Math.round(n))); }
+  /* Split a price into n payments that add up exactly, to the cent: $100 in 3 is $33.34, $33.33, $33.33. */
+  function parts(total, n) {
+    var cents = Math.round(total * 100), base = Math.floor(cents / n), extra = cents - base * n, out = [];
+    for (var i = 0; i < n; i++) { out.push((base + (i < extra ? 1 : 0)) / 100); }
+    return out;
+  }
+  function payUrl(amount) { return PAYPAL.replace(/\/+$/, '') + '/' + (Math.round(amount * 100) % 100 ? amount.toFixed(2) : String(Math.round(amount))) + 'USD'; }
+  function planText(seat, plan) {
+    if (plan === 1) { return 'in full, ' + money(seat.price); }
+    return plan + ' payments: ' + parts(seat.price, plan).map(money).join(', ');
+  }
   function hours(n) { return (Math.round(n * 10) / 10).toString(); }
   function seatById(id) { for (var i = 0; i < SEATS.length; i++) { if (SEATS[i].id === id) { return SEATS[i]; } } return null; }
 
   /* ---------- Planner ---------- */
   var ui = document.querySelector('.planner-ui');
   if (ui) {
-    var state = { path: 'peer', seat: PATHS.peer.defaultSeat, es: false };
+    var state = { path: 'peer', seat: PATHS.peer.defaultSeat, es: false, plan: 1 };
     var seatTouched = false;
 
     var seatList = $('seat-list');
@@ -71,6 +83,11 @@
     var status = $('plan-status');
     var fallback = $('plan-fallback');
     var fallbackText = $('plan-text');
+    var payField = $('pay-field');
+    var payBox = $('pay-box');
+    var payLead = $('pay-lead');
+    var payBtn = $('pay-btn');
+    var payLater = $('pay-later');
 
     SEATS.forEach(function (s) {
       var label = document.createElement('label');
@@ -98,6 +115,8 @@
       if (seatById(s)) { state.seat = s; seatTouched = true; }
       else { state.seat = PATHS[p].defaultSeat || PATHS.peer.defaultSeat; }
       state.es = params.get('es') === '1';
+      var pl = parseInt(params.get('pay'), 10);
+      state.plan = pl === 2 || pl === 3 ? pl : 1;
       return true;
     };
 
@@ -120,7 +139,7 @@
         lines.push('', 'Organization and billing contact for the invoice:', '');
       }
       if (seat && seat.price > 0) {
-        lines.push('', 'Payment: one payment / two payments / three payments');
+        lines.push('', 'Payment: ' + planText(seat, state.plan) + (seat.id === 'employer' ? ', by invoice' : ', by PayPal'));
       }
       if (state.es) {
         lines.push('', 'I would join a Spanish-language cohort if one opens.');
@@ -133,6 +152,7 @@
       var h = 'plan=' + state.path;
       if (state.path !== 'volunteer') { h += '&seat=' + state.seat; }
       if (state.es) { h += '&es=1'; }
+      if (state.plan > 1) { h += '&pay=' + state.plan; }
       return location.href.split('#')[0] + '#' + h;
     };
 
@@ -192,6 +212,28 @@
       seatFree.hidden = !volunteer;
       seatList.querySelectorAll('input[name="seat"]').forEach(function (r) { r.checked = r.value === state.seat; });
       optEs.checked = state.es;
+      document.querySelectorAll('input[name="payplan"]').forEach(function (r) { r.checked = Number(r.value) === state.plan; });
+      var paid = !!(seat && seat.price > 0);
+      payField.hidden = !paid;
+      payBox.hidden = !paid || seat.id === 'employer';
+      if (paid && seat.id !== 'employer') {
+        var amounts = parts(seat.price, state.plan);
+        payLead.textContent = seat.name + ' seat, ' + money(seat.price) + (state.plan > 1 ? ', in ' + state.plan + ' payments.' : ', paid in full.');
+        payBtn.href = payUrl(amounts[0]);
+        payBtn.textContent = state.plan > 1 ? 'Pay payment 1 of ' + state.plan + ', ' + money(amounts[0]) : 'Pay ' + money(seat.price) + ' with PayPal';
+        payLater.textContent = '';
+        payLater.hidden = state.plan === 1;
+        if (state.plan > 1) {
+          payLater.appendChild(document.createTextNode('Later payments, any time before week 4: '));
+          amounts.slice(1).forEach(function (amt, i) {
+            if (i) { payLater.appendChild(document.createTextNode(' · ')); }
+            var a = document.createElement('a');
+            a.href = payUrl(amt); a.target = '_blank'; a.rel = 'noopener noreferrer';
+            a.textContent = 'payment ' + (i + 2) + ', ' + money(amt);
+            payLater.appendChild(a);
+          });
+        }
+      }
 
       renderTrack();
 
@@ -208,7 +250,7 @@
       mailBtn.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(msg.subject) + '&body=' + encodeURIComponent(msg.body);
       live.textContent = p.label + ' path' + (seat ? ', ' + seat.name + ' seat ' + money(seat.price) : '') + ': ' +
         p.sessions + ' live sessions over ' + p.weeks + ' weeks, about ' + hours(p.sessions * TOTAL_HOURS) + ' hours in all, ' +
-        (volunteer ? 'free.' : 'tuition ' + money(seat.price) + '.');
+        (volunteer ? 'free.' : 'tuition ' + money(seat.price) + (seat.price > 0 && state.plan > 1 ? ' in ' + state.plan + ' payments.' : '.'));
     };
 
     var showFallback = function (text) {
@@ -246,6 +288,9 @@
       }
     });
     optEs.addEventListener('change', function () { state.es = optEs.checked; update(); });
+    payField.addEventListener('change', function (e) {
+      if (e.target && e.target.name === 'payplan') { state.plan = Number(e.target.value); status.textContent = ''; update(); }
+    });
     copyBtn.addEventListener('click', function () {
       var msg = compose();
       copy('To: ' + EMAIL + '\nSubject: ' + msg.subject + '\n\n' + msg.body, 'Request copied. Paste it into an email to ' + EMAIL + '.');
@@ -261,6 +306,9 @@
     update();
     if (fromHash) { $('plan').scrollIntoView(); }
   }
+
+  /* ---------- Tuition table: PayPal links follow PAYPAL above ---------- */
+  document.querySelectorAll('a[data-pay-amount]').forEach(function (a) { a.href = payUrl(Number(a.getAttribute('data-pay-amount'))); });
 
   /* ---------- Evidence ledger filter ---------- */
   var ledgerFilters = $('ledger-filters');
